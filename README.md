@@ -10,21 +10,47 @@ This is the Epicodus independent end-of-week assignment for Friday, March 20, 20
 
 | Specification             | Input 	|     Output      |
 |-------------------------	|-------	|----------------	|
-
-
+|When user visits '/' root route, display splash page with link to '/stylists' and '/clients' | user visits '/' route | display home|
+| When user visits '/stylists' display list of all stylists, each with 'view detail' link, and 'add new stylist' button | user visits '/stylists' | display list of stylists, and 'Add new stylist' button|
+| When user clicks 'Add new stylist' button, redirect to stylist form | clicks 'add new stylist' | redirect to '/stylists/new'|
+| When user visits '/stylists/new' show new stylists form with field for "Stylist Name" and "Stylist Speciality" | user visits '/stylists/new' | show stylist form |
+| When user clicks submit on stylist form, add new stylist to List and redirect to '/stylists' | clicks submit | Add new stylist to List, redirect to '/stylists' |
+| When user visits '/stylists/{id}', they will see the details of the stylist | user visits stylist page | show stylist info |
 
 ## Setup/Installation Requirements
 
 Clone this repository via Terminal using the following commands:
 * ```$ cd desktop```
-* ```$ git clone https://github.com/brandanpdx/vendor-tracker```
-* ```$ cd word-counter```
+* ```$ git clone https://github.com/brandanpdx/hair-salon```
+* ```$ cd hair-salon```
 
-To run the program, navigate to the VendorTracker production folder by typing the following into the terminal: 
+To run the program, navigate to the HairSalon production folder by typing the following into the terminal: 
 
-* ```$ cd VendorTracker```
+* ```$ cd HairSalon```
 
-Then run the program by typing:
+Then restore dependencies by typing:
+* ```$ dotnet restore```
+
+Setup MySQL Database by running the commands below in MySQL Workbench: 
+
+```CREATE DATABASE `brandan_sayarath`;
+USE `brandan_sayarath`;```
+
+```CREATE TABLE `stylists` (
+  `StylistId` int(11) NOT NULL AUTO_INCREMENT,
+  `StylistName` varchar(255) DEFAULT NULL,
+  `StylistSpeciality` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`StylistId`)
+);```
+
+```CREATE TABLE `clients` (
+  `ClientId` int(11) NOT NULL AUTO_INCREMENT,
+  `ClientName` varchar(255) DEFAULT NULL,
+  `StylistId` int(11) DEFAULT '0',
+  PRIMARY KEY (`ClientId`)
+);```
+
+You can now run the program by typing:
 * ```$ dotnet run```
 
 
@@ -37,9 +63,11 @@ Please email Brandan Sayarath: brandan@brandan.tech for any questions.
 This program was created with:
 
 * C#
-* ASP.NET Core MVC
-* HTML
-* CSS
+* ASP.NET Core MVC 2.2
+* Entity Framework
+* MySQL
+* MySQL Workbench 
+* HTML5
 
 ## License
 
