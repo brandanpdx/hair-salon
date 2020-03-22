@@ -16,6 +16,8 @@ This is the Epicodus independent end-of-week assignment for Friday, March 20, 20
 | When user visits '/stylists/new' show new stylists form with field for "Stylist Name" and "Stylist Speciality" | user visits '/stylists/new' | show stylist form |
 | When user clicks submit on stylist form, add new stylist to List and redirect to '/stylists' | clicks submit | Add new stylist to List, redirect to '/stylists' |
 | When user visits '/stylists/{id}', they will see the details of the stylist | user visits stylist page | show stylist info |
+| When user clicks 'Add new stylist' button, redirect to stylist form | clicks 'add new stylist' | redirect to '/stylists/new'|
+
 
 ## Setup/Installation Requirements
 
@@ -33,22 +35,22 @@ Then restore dependencies by typing:
 
 Setup MySQL Database by running the commands below in MySQL Workbench: 
 
-* ```CREATE DATABASE `brandan_sayarath`;
-USE `brandan_sayarath`;```
-
-* ```CREATE TABLE `stylists` (
+```
+CREATE DATABASE `brandan_sayarath`;
+USE `brandan_sayarath`;
+CREATE TABLE `stylists` (
   `StylistId` int(11) NOT NULL AUTO_INCREMENT,
   `StylistName` varchar(255) DEFAULT NULL,
   `StylistSpeciality` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`StylistId`)
-);```
-
-* ```CREATE TABLE `clients` (
+);
+CREATE TABLE `clients` (
   `ClientId` int(11) NOT NULL AUTO_INCREMENT,
   `ClientName` varchar(255) DEFAULT NULL,
   `StylistId` int(11) DEFAULT '0',
   PRIMARY KEY (`ClientId`)
-);```
+);
+```
 
 You can now run the program by typing:
 * ```$ dotnet run```
