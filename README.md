@@ -33,17 +33,17 @@ Then restore dependencies by typing:
 
 Setup MySQL Database by running the commands below in MySQL Workbench: 
 
-```CREATE DATABASE `brandan_sayarath`;
+* ```CREATE DATABASE `brandan_sayarath`;
 USE `brandan_sayarath`;```
 
-```CREATE TABLE `stylists` (
+* ```CREATE TABLE `stylists` (
   `StylistId` int(11) NOT NULL AUTO_INCREMENT,
   `StylistName` varchar(255) DEFAULT NULL,
   `StylistSpeciality` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`StylistId`)
 );```
 
-```CREATE TABLE `clients` (
+* ```CREATE TABLE `clients` (
   `ClientId` int(11) NOT NULL AUTO_INCREMENT,
   `ClientName` varchar(255) DEFAULT NULL,
   `StylistId` int(11) DEFAULT '0',
